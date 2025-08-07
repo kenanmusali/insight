@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AccessibilityWidget from './components/AccessibilityWidget';
-import { AccessibilityProvider } from './components/context/AccessibilityContext';
+import AccessibilityWidget from '../src/components/AccessibilityWidget';
+import { AccessibilityProvider } from '../src/components/context/AccessibilityContext';
 
 const containerId = 'accessibility-widget-root';
 
