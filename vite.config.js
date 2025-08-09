@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -6,19 +5,18 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: './src/widget.jsx',  // your widget entry file
-      name: 'AccessibilityWidget',
-      fileName: () => 'widget.js',  // force output filename to be widget.js
-      formats: ['iife'],
+      entry: 'src/widget.jsx',      // your current widget entry
+      name: 'AccessibilityWidget',  // global name (optional)
+      fileName: () => 'widget.js',  // force single file name
+      formats: ['iife'],            // self-executing bundle for <script>
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      // IMPORTANT: we want React included so host pages don't need it
+      external: [],
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        inlineDynamicImports: true, // avoid creating extra chunks
       },
     },
+    minify: 'esbuild',
   },
 });
