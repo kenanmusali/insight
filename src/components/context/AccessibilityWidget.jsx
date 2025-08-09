@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AccessibilityContext } from '../components/context/AccessibilityContext';
+import { AccessibilityContext } from './AccessibilityContext';
 import { useTranslation } from 'react-i18next';
 
 const AccessibilityWidget = () => {
