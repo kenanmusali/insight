@@ -10,12 +10,7 @@ export const AccessibilityProvider = ({ children }) => {
 
   return (
     <AccessibilityContext.Provider
-      value={{
-        zoom, setZoom,
-        largeText, setLargeText,
-        contrast, setContrast,
-        language, setLanguage,
-      }}
+      value={{ zoom, setZoom, largeText, setLargeText, contrast, setContrast, language, setLanguage }}
     >
       {children}
     </AccessibilityContext.Provider>

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run build && vite preview --open /test.html --strictPort --port 4173",
     "build": "vite build",
     "lint": "eslint .",
     "start": "vite",
@@ -28,6 +28,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   }
 }

@@ -1,12 +1,8 @@
-import React from 'react';
-import AccessibilityWidget from './components/context/AccessibilityWidget';
-
-function App() {
+// App.jsx
+export default function App() {
   return (
-    <>
-      <AccessibilityWidget />
-    </>
+    <div >
+      Dev shell only. Open <code>/test.html</code> to test the widget.
+    </div>
   );
 }
-
-export default App;
