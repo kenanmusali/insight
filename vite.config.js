@@ -1,3 +1,26 @@
+// import { defineConfig } from 'vite';
+// import react from '@vitejs/plugin-react';
+
+// export default defineConfig({
+//   plugins: [react()],
+//   build: {
+//     lib: {
+//       entry: 'src/widget.jsx',      
+//       name: 'AccessibilityWidget',  
+//       fileName: () => 'widget.js',  
+//       formats: ['iife'],            
+//     },
+//     rollupOptions: {
+
+//       external: [],
+//       output: {
+//         inlineDynamicImports: true, 
+//       },
+//     },
+//     minify: 'esbuild',
+//   },
+// });
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -5,18 +28,17 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: 'src/widget.jsx',      // your current widget entry
-      name: 'AccessibilityWidget',  // global name (optional)
-      fileName: () => 'widget.js',  // force single file name
-      formats: ['iife'],            // self-executing bundle for <script>
+      entry: 'src/widget.jsx',
+      name: 'AccessibilityWidget',
+      fileName: () => 'widget.js',
+      formats: ['iife'],
     },
     rollupOptions: {
-      // IMPORTANT: we want React included so host pages don't need it
-      external: [],
-      output: {
-        inlineDynamicImports: true, // avoid creating extra chunks
-      },
+      inlineDynamicImports: true,
     },
-    minify: 'esbuild',
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env': {}, // Prevents "process is not defined"
   },
 });
